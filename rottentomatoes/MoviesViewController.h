@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MoviesViewController : UIViewController
+@interface MoviesViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+
+-(id) initWithURL:(NSString *)url;
 
 @end

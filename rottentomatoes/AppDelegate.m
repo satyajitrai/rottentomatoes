@@ -7,13 +7,32 @@
 //
 
 #import "AppDelegate.h"
+#import "MoviesViewController.h"
 
 @implementation AppDelegate
+
+static NSString * const TopRentalsURL = @"http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=6wcukn4emcss3akenr7ky5fa";
+static NSString * const BoxOfficeURL = @"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=6wcukn4emcss3akenr7ky5fa";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    
+    MoviesViewController *vc1 = [[MoviesViewController  alloc] initWithURL:BoxOfficeURL];
+    UINavigationController *nc1 = [[UINavigationController alloc] initWithRootViewController:vc1];
+    nc1.tabBarItem.title = @"Box Office";
+    nc1.tabBarItem.image = [UIImage imageNamed: @"BoxOffice"];
+    
+    MoviesViewController *vc2 = [[MoviesViewController  alloc] initWithURL:TopRentalsURL];
+    UINavigationController *nc2 = [[UINavigationController alloc] initWithRootViewController:vc2];
+    nc2.tabBarItem.title = @"Top DVDs";
+    nc1.tabBarItem.image = [UIImage imageNamed: @"TopDVDs"];
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    tabBarController.viewControllers = @[nc1, nc2];
+    
+    self.window.rootViewController = tabBarController;
+
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

@@ -6,9 +6,10 @@
 //  Copyright (c) 2014 Yahoo. All rights reserved.
 //
 
-#import "MovieTableViewCell.h"
+#import "MovieCell.h"
+#import "MovieDetailsViewController.h"
 
-@implementation MovieTableViewCell
+@implementation MovieCell
 
 - (void)awakeFromNib
 {
@@ -18,7 +19,6 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
     // Configure the view for the selected state
 }
 
