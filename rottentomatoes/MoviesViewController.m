@@ -15,8 +15,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *movies;
 @property (strong, nonatomic) NSString *apiURL;
-- (IBAction)onTap:(id)sender;
-
 @end
 
 @implementation MoviesViewController
@@ -105,12 +103,9 @@ static NSString * const MovieCellClass = @"MovieCell";
     return cell;
 }
 
-
-- (IBAction)onTap:(id)sender {;
-    NSIndexPath * selected = [self.tableView indexPathForSelectedRow];
-    
-    NSDictionary *movie = self.movies[selected.row];
-    NSString * synopsis = movie[@"synopsis"];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"Selected row %d", indexPath.row);
+    NSString * synopsis = self.movies[indexPath.row][@"synopsis"];
     
     MovieDetailsViewController *mdvc = [[MovieDetailsViewController alloc]initWithDescription:synopsis];
     [self.navigationController pushViewController:mdvc animated:YES];
