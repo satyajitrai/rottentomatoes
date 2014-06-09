@@ -25,7 +25,7 @@
                     <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.079802139945652217" green="0.079802139945652217" blue="0.079802139945652217" alpha="0.88" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
