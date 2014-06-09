@@ -1,8 +1,7 @@
 Rotten Tomatoes iOS Application
 ===============================
 
-Hours Worked
-------------
+##Hours Worked
 15 hours
 
 Implemented Stories
@@ -13,3 +12,7 @@ Implemented Stories
    * User sees error message when there's a networking error using a custom label.
    * User can pull to refresh the movie list.
    * Add a tab bar for Box Office and DVD.
+
+Demo
+----
+[[img src=demo.gif alt="Rotten Tomatoes Demo"]
