@@ -15,4 +15,4 @@ Implemented Stories
 
 Demo
 ----
-[[img src=demo.gif alt="Rotten Tomatoes Demo"]
+![demo](demo.gif "Rotten Tomatoes Demo")
