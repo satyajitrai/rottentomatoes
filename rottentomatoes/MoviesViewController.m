@@ -105,9 +105,8 @@ static NSString * const MovieCellClass = @"MovieCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"Selected row %d", indexPath.row);
-    NSString * synopsis = self.movies[indexPath.row][@"synopsis"];
-    
-    MovieDetailsViewController *mdvc = [[MovieDetailsViewController alloc]initWithDescription:synopsis];
+    NSDictionary *selectedMovie = self.movies[indexPath.row];
+    MovieDetailsViewController *mdvc = [[MovieDetailsViewController alloc]initWithMovie:selectedMovie];
     [self.navigationController pushViewController:mdvc animated:YES];
 }
 @end

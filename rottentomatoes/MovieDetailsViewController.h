@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MovieDetailsViewController : UIViewController
+@interface MovieDetailsViewController : UIViewController<UIScrollViewDelegate>
 
--(id) initWithDescription: (NSString *) description;
+- (id)initWithMovie:(NSDictionary *)movie;
 
 @end
