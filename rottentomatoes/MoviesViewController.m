@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *movies;
 @property (strong, nonatomic) NSString *apiURL;
+@property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 @end
 
 @implementation MoviesViewController
@@ -39,37 +40,47 @@ static NSString * const MovieCellClass = @"MovieCell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Table view delegates
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+    [self loadMovies];
+    [self.tableView registerNib:[UINib nibWithNibName:MovieCellClass bundle:nil] forCellReuseIdentifier:MovieCellClass];
+    self.tableView.rowHeight = 120;
+    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refreshTable:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
+}
+
+- (void) loadMovies {
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[self apiURL]]];
+    
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         if (connectionError) {
             NSLog(@"Failed getting data: %@", connectionError);
+            self.errorLabel.hidden = NO;
         }
         else {
             NSLog(@"Succesfully fetched data from: %@", self.apiURL);
+            id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            self.movies = object[@"movies"];
+            self.errorLabel.hidden = YES;
+            [self.tableView reloadData];
         }
-        
-        self.movies = object[@"movies"];
-        
-        [self.tableView reloadData];
     }];
-    
-    [self.tableView registerNib:[UINib nibWithNibName:MovieCellClass bundle:nil] forCellReuseIdentifier:MovieCellClass];
-    
-    self.tableView.rowHeight = 120;
+}
+
+- (void)refreshTable:(UIRefreshControl*) refresh {
+    [self loadMovies];
+    [refresh endRefreshing];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"Sender is : %@", sender);
 }
 
 #pragma mark  - Table view methods
