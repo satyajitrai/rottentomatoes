@@ -9,7 +9,6 @@
 #import "MoviesViewController.h"
 #import "MovieCell.h"
 #import "MovieDetailsViewController.h"
-#import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface MoviesViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -90,26 +89,10 @@ static NSString * const MovieCellClass = @"MovieCell";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    NSLog(@"Cell for row at index path: %d", indexPath.row);
-    
+    NSLog(@"Creating cell for index %d", indexPath.row);
     NSDictionary *movie = self.movies[indexPath.row];
-    
     MovieCell *cell = [self.tableView dequeueReusableCellWithIdentifier:MovieCellClass];
-    cell.titleLabel.text = movie[@"title"];
-    cell.synopsisLabel.text = movie[@"synopsis"];
-    
-    NSString *thumbUrlString = movie[@"posters"][@"thumbnail"];
-    NSURL * thumbUrl = [NSURL URLWithString:thumbUrlString];
-    UIImage *placeholderImage = [UIImage imageNamed:@"placeholder"];
-    
-    [cell.posterView setImageWithURLRequest:[NSURLRequest requestWithURL: thumbUrl] placeholderImage:placeholderImage success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-        NSLog(@"Request Sucessfull");
-        cell.posterView.image = image;
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-        // TODO: Error handling
-        NSLog(@"Request Failed");
-    }];
+    [cell setMovie:movie];
     
     return cell;
 }
