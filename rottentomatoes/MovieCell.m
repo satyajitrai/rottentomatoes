@@ -7,7 +7,6 @@
 //
 
 #import "MovieCell.h"
-#import "MovieDetailsViewController.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface MovieCell()

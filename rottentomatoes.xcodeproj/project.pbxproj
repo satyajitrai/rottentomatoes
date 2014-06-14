@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		34CBA17B19445DF600F1141B /* MovieDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CBA17919445DF600F1141B /* MovieDetailsViewController.m */; };
-		34CBA17C19445DF600F1141B /* MovieDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34CBA17A19445DF600F1141B /* MovieDetailsViewController.xib */; };
+		349D67D5194BF8AA0063BF3D /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349D67D3194BF8AA0063BF3D /* DetailsViewController.m */; };
+		349D67D6194BF8AA0063BF3D /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 349D67D4194BF8AA0063BF3D /* DetailsViewController.xib */; };
 		34E68BC1193EC37C0054EC18 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E68BC0193EC37C0054EC18 /* Foundation.framework */; };
 		34E68BC3193EC37C0054EC18 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E68BC2193EC37C0054EC18 /* CoreGraphics.framework */; };
 		34E68BC5193EC37C0054EC18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E68BC4193EC37C0054EC18 /* UIKit.framework */; };
@@ -40,9 +40,9 @@
 
 /* Begin PBXFileReference section */
 		127480D9BE7B43788FA6BE95 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		34CBA17819445DF600F1141B /* MovieDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailsViewController.h; sourceTree = "<group>"; };
-		34CBA17919445DF600F1141B /* MovieDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailsViewController.m; sourceTree = "<group>"; };
-		34CBA17A19445DF600F1141B /* MovieDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieDetailsViewController.xib; sourceTree = "<group>"; };
+		349D67D2194BF8AA0063BF3D /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		349D67D3194BF8AA0063BF3D /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		349D67D4194BF8AA0063BF3D /* DetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
 		34E68BBD193EC37C0054EC18 /* rottentomatoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rottentomatoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34E68BC0193EC37C0054EC18 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		34E68BC2193EC37C0054EC18 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -138,9 +138,9 @@
 				34E68BF4194157C00054EC18 /* MovieCell.h */,
 				34E68BF5194157C00054EC18 /* MovieCell.m */,
 				34E68BF6194157C00054EC18 /* MovieCell.xib */,
-				34CBA17819445DF600F1141B /* MovieDetailsViewController.h */,
-				34CBA17919445DF600F1141B /* MovieDetailsViewController.m */,
-				34CBA17A19445DF600F1141B /* MovieDetailsViewController.xib */,
+				349D67D2194BF8AA0063BF3D /* DetailsViewController.h */,
+				349D67D3194BF8AA0063BF3D /* DetailsViewController.m */,
+				349D67D4194BF8AA0063BF3D /* DetailsViewController.xib */,
 			);
 			path = rottentomatoes;
 			sourceTree = "<group>";
@@ -255,7 +255,7 @@
 				34E68BF3193EC3A50054EC18 /* MoviesViewController.xib in Resources */,
 				34E68BF8194157C00054EC18 /* MovieCell.xib in Resources */,
 				34E68BD3193EC37C0054EC18 /* Images.xcassets in Resources */,
-				34CBA17C19445DF600F1141B /* MovieDetailsViewController.xib in Resources */,
+				349D67D6194BF8AA0063BF3D /* DetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,9 +307,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34CBA17B19445DF600F1141B /* MovieDetailsViewController.m in Sources */,
 				34E68BF2193EC3A50054EC18 /* MoviesViewController.m in Sources */,
 				34E68BD1193EC37C0054EC18 /* AppDelegate.m in Sources */,
+				349D67D5194BF8AA0063BF3D /* DetailsViewController.m in Sources */,
 				34E68BF7194157C00054EC18 /* MovieCell.m in Sources */,
 				34E68BCD193EC37C0054EC18 /* main.m in Sources */,
 			);

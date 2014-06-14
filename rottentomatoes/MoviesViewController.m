@@ -8,7 +8,7 @@
 
 #import "MoviesViewController.h"
 #import "MovieCell.h"
-#import "MovieDetailsViewController.h"
+#import "DetailsViewController.h"
 
 @interface MoviesViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -100,7 +100,7 @@ static NSString * const MovieCellClass = @"MovieCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"Selected row %d", indexPath.row);
     NSDictionary *selectedMovie = self.movies[indexPath.row];
-    MovieDetailsViewController *mdvc = [[MovieDetailsViewController alloc]initWithMovie:selectedMovie];
+    DetailsViewController *mdvc = [[DetailsViewController alloc]initWithMovie:selectedMovie];
     [self.navigationController pushViewController:mdvc animated:YES];
 }
 @end
