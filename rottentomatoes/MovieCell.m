@@ -27,7 +27,9 @@
     
     [self.posterView setImageWithURLRequest:[NSURLRequest requestWithURL: thumbUrl] placeholderImage:placeholderImage success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
         NSLog(@"Request Sucessful");
-        self.posterView.image = image;
+        [UIView transitionWithView:self.posterView duration:0.3f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+            self.posterView.image = image;
+        } completion:nil];
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
         // TODO: Error handling
         NSLog(@"Request Failed");
