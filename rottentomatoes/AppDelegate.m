@@ -21,13 +21,13 @@ static NSString * const BoxOfficeURL = @"http://api.rottentomatoes.com/api/publi
     MoviesViewController *vc1 = [[MoviesViewController  alloc] initWithURL:BoxOfficeURL];
     UINavigationController *nc1 = [[UINavigationController alloc] initWithRootViewController:vc1];
     nc1.tabBarItem.title = @"Box Office";
-    nc1.tabBarItem.image = [UIImage imageNamed: @"BoxOffice"];
+    nc1.tabBarItem.image = [[UIImage imageNamed: @"ticket"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
     
     MoviesViewController *vc2 = [[MoviesViewController  alloc] initWithURL:TopRentalsURL];
     UINavigationController *nc2 = [[UINavigationController alloc] initWithRootViewController:vc2];
     nc2.tabBarItem.title = @"Top DVDs";
-    nc1.tabBarItem.image = [UIImage imageNamed: @"TopDVDs"];
-    
+    nc2.tabBarItem.image = [[UIImage imageNamed: @"dvd"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
+
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     tabBarController.viewControllers = @[nc1, nc2];
     
