@@ -1,8 +1,7 @@
 Rotten Tomatoes iOS Application
 ===============================
 
-##Hours Worked
-15 hours
+**Hours Worked**: 20 hours
 
 Implemented Stories
 -------------------
@@ -11,7 +10,9 @@ Implemented Stories
    * User sees loading state while waiting for movies API.
    * User sees error message when there's a networking error using a custom label.
    * User can pull to refresh the movie list.
-   * Add a tab bar for Box Office and DVD.
+   * Add a tab bar for Box Office and DVD (optional).
+   * All images fade in (optional).
+
 
 Demo
 ----
